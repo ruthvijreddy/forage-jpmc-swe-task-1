@@ -44,7 +44,6 @@ def getRatio(price_a, price_b):
     """ ------------- Update this function ------------- """
     if price_b==0:
         return
-    
     return price_a/price_b
 
 
@@ -53,7 +52,7 @@ if __name__ == "__main__":
     # Query the price once every N seconds.
     for _ in iter(range(N)):
         quotes = json.loads(urllib.request.urlopen(QUERY.format(random.random())).read())
-
+        prices=[]
         """ ----------- Update to get the ratio --------------- """
         for quote in quotes:
             stock, bid_price, ask_price, price = getDataPoint(quote)
